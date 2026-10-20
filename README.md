@@ -1,6 +1,6 @@
 # Harbour concept (working name)
 
-Confidential. A clickable concept for the commercial layer on top of the open [Lake](https://github.com/thelakeprotocol/lake) protocol: a hosted house with no setup, data connectors, real payouts, and a research console.
+A clickable concept for the commercial layer on top of the open [Lake](https://github.com/thelakeprotocol/lake) protocol: a hosted house with no setup, data connectors, real payouts, and a research console.
 
 Plain HTML, CSS and a little JavaScript. No build step, no runtime, no dependencies.
 
