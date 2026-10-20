@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: connect your data</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .source { display: flex; align-items: center; gap: 14px; padding: 14px 14px 14px 16px; }
+  .mark { width: 40px; height: 40px; border-radius: 12px; background: var(--teal-soft); color: var(--teal); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; flex: none; }
+  .connect { min-height: 44px; padding: 0 16px; border-radius: 12px; border: 1.5px solid var(--border); background: #fff; color: var(--ink); font-weight: 700; font-size: 14px; }
+  .connect[aria-pressed="true"] { border-color: var(--teal-soft); background: var(--teal-soft); color: var(--teal-dark); }
+</style>
+</head>
+<body class="phone-page">
+<div class="phone">
+  <main class="screen">
+    <div class="row between">
+      <a class="icon-btn" href="welcome.html" aria-label="Back"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="steps" aria-label="Step 1 of 2"><span class="on"></span><span></span></div>
+      <span style="width: 44px"></span>
+    </div>
+    <div class="stack" style="gap: 10px">
+      <h1 class="title">Bring your records home</h1>
+      <p class="lede">We copy them into your house, check the provider's signature, and keep nothing ourselves.</p>
+    </div>
+    <div class="stack" style="gap: 10px">
+      <div class="card source"><div class="mark">GP</div><div style="flex: 1; min-width: 0"><div style="font-weight: 700">GP record</div><div class="small" style="font-size: 13px">Medications, conditions, hospital stays, via the NHS App</div></div><button type="button" class="connect" aria-pressed="true">Added</button></div>
+      <div class="card source"><div class="mark">Fit</div><div style="flex: 1; min-width: 0"><div style="font-weight: 700">Phone and watch</div><div class="small" style="font-size: 13px">Steps, heart rate and sleep, from Apple Health or Health Connect</div></div><button type="button" class="connect" aria-pressed="false">Connect</button></div>
+      <div class="card source"><div class="mark">£</div><div style="flex: 1; min-width: 0"><div style="font-weight: 700">Bank</div><div class="small" style="font-size: 13px">Spending categories through Open Banking. Read-only</div></div><button type="button" class="connect" aria-pressed="false">Connect</button></div>
+      <div class="card source"><div class="mark">Doc</div><div style="flex: 1; min-width: 0"><div style="font-weight: 700">Upload a file</div><div class="small" style="font-size: 13px">A FHIR export or a letter from your hospital</div></div><button type="button" class="connect" aria-pressed="false">Connect</button></div>
+    </div>
+    <div class="card row" style="align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 14px">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="flex: none; margin-top: 2px"><rect x="3.5" y="8" width="11" height="7.5" rx="1.5" fill="none" stroke="#0B7A69" stroke-width="1.6"/><path d="M6 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="#0B7A69" stroke-width="1.6"/></svg>
+      <p class="lede" style="font-size: 13px">Your house is a Solid pod in your name. You can move it to another host, or your own computer, at any time.</p>
+    </div>
+    <div class="bottom">
+      <a class="btn lg dark" href="rules.html" id="go">Continue · 1 connected</a>
+      <a class="btn plain" href="rules.html">Skip for now</a>
+    </div>
+  </main>
+</div>
+<script>
+  const buttons = [...document.querySelectorAll('.connect')];
+  const count = () => { document.getElementById('go').textContent = `Continue · ${buttons.filter((b) => b.getAttribute('aria-pressed') === 'true').length} connected`; };
+  for (const b of buttons) b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', String(on));
+    b.textContent = on ? 'Added' : 'Connect';
+    count();
+  });
+</script>
+</body>
+</html>

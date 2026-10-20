@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: your data</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .fact { background: var(--ground); border-radius: 12px; padding: 10px 12px; }
+  .fact div:first-child { font-size: 12px; color: var(--faint); }
+  .fact div:last-child { font-weight: 700; font-size: 15px; }
+  .switch { flex: none; width: 52px; height: 32px; border-radius: 16px; border: 0; padding: 3px; display: flex; background: #AEB9C6; }
+  .switch span { width: 26px; height: 26px; border-radius: 50%; background: #fff; display: block; }
+  .switch[aria-checked="true"] { background: var(--teal); justify-content: flex-end; }
+</style>
+</head>
+<body class="phone-page">
+<div class="phone">
+  <main class="screen tight" style="gap: 14px">
+    <h1 class="page">Your data</h1>
+    <section class="card stack pad" style="gap: 10px">
+      <div class="row between"><b>From your GP record</b><span class="chip" style="padding: 4px 9px">Signed by your practice ✓</span></div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <div class="fact"><div>Age band</div><div>60–69</div></div>
+        <div class="fact"><div>Medications</div><div>2</div></div>
+        <div class="fact"><div>Conditions</div><div>1</div></div>
+        <div class="fact"><div>Hospital stays</div><div>1</div></div>
+      </div>
+      <div class="small">Never leaves your house. Studies run here and send back one scrambled answer.</div>
+    </section>
+    <section class="card" style="padding: 4px 16px">
+      <div class="list-item" style="justify-content: space-between">
+        <div><b>Keys out right now</b><div class="small">City University · 47 h left · one study</div></div>
+        <button type="button" id="revoke" class="btn ghost" style="min-height: 44px; border-radius: 12px; border-color: #E2B1A0; color: #A0360F; font-size: 14px">Revoke</button>
+      </div>
+      <div class="list-item" style="justify-content: space-between">
+        <div style="min-width: 0"><b>Your own AI assistant</b><div class="small">Let Claude or another assistant read your house, never your wallet</div></div>
+        <button type="button" class="switch" role="switch" aria-checked="false" aria-label="Let your AI assistant read your house"><span></span></button>
+      </div>
+    </section>
+    <section style="background: var(--ink); color: #fff; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+      <b style="font-size: 16px">Move house</b>
+      <div style="font-size: 13px; line-height: 1.45; color: #C4CEDA">Your house is a Solid pod in your name. Take it to any other provider, or your own computer, with everything in it: records, receipts, keys and rules.</div>
+      <div id="move" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <button type="button" class="btn mint" style="border-radius: 12px; font-size: 14px">Download all</button>
+        <button type="button" class="btn" style="border-radius: 12px; font-size: 14px; border: 1.5px solid #3A4A60; background: transparent; color: #fff">Move to…</button>
+      </div>
+      <div id="moving" hidden style="font-size: 14px; font-weight: 700; color: #7CE3CC">Packing 214 files. Nobody can stop you leaving.</div>
+    </section>
+  </main>
+  <nav class="tabbar" data-current="data"></nav>
+</div>
+<script src="../assets/tabbar.js"></script>
+<script>
+  document.getElementById('revoke').addEventListener('click', (e) => { e.currentTarget.textContent = 'Revoked'; });
+  const sw = document.querySelector('.switch');
+  sw.addEventListener('click', () => sw.setAttribute('aria-checked', String(sw.getAttribute('aria-checked') !== 'true')));
+  for (const b of document.querySelectorAll('#move button')) b.addEventListener('click', () => { document.getElementById('move').hidden = true; document.getElementById('moving').hidden = false; });
+</script>
+</body>
+</html>

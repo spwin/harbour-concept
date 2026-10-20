@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: how your house answers</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .preset { display: flex; flex-direction: column; gap: 6px; width: 100%; text-align: left; padding: 14px 16px; border-radius: 16px; background: #fff; color: var(--ink); border: 2px solid transparent; }
+  .preset[aria-checked="true"] { border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
+  .preset ul { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+</style>
+</head>
+<body class="phone-page">
+<div class="phone">
+  <main class="screen" style="gap: 20px">
+    <div class="row between">
+      <a class="icon-btn" href="connect.html" aria-label="Back"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="steps" aria-label="Step 2 of 2"><span class="on"></span><span class="on"></span></div>
+      <span style="width: 44px"></span>
+    </div>
+    <div class="stack" style="gap: 10px">
+      <h1 class="title">How should your house answer?</h1>
+      <p class="lede">Pick a starting point. Your house follows it in code, every time. Change any rule later.</p>
+    </div>
+    <div class="stack" style="gap: 10px" role="radiogroup" aria-label="Starting rules">
+      <button type="button" class="preset" role="radio" aria-checked="false"><span class="row between"><b style="font-size: 17px">Private</b><span class="small" style="font-weight: 600">Ask me every time</span></span><ul><li>Every request comes to your phone first.</li><li>Nothing is shared without your tap.</li></ul></button>
+      <button type="button" class="preset" role="radio" aria-checked="true"><span class="row between"><b style="font-size: 17px">Balanced</b><span class="small" style="font-weight: 600">Most people pick this</span></span><ul><li>Joins approved research paying £4 or more.</li><li>Shares only what the question needs.</li><li>Asks you about everything else.</li></ul></button>
+      <button type="button" class="preset" role="radio" aria-checked="false"><span class="row between"><b style="font-size: 17px">Generous</b><span class="small" style="font-weight: 600">Help as much as possible</span></span><ul><li>Joins any approved, certified study.</li><li>Teams up with other houses for a fairer price.</li><li>Asks you only about new kinds of data.</li></ul></button>
+    </div>
+    <div class="card stack" style="gap: 6px; padding: 12px 14px; border-radius: 14px">
+      <div class="small" style="font-weight: 700; letter-spacing: .06em; text-transform: uppercase">Always, whatever you pick</div>
+      <div style="font-size: 14px; line-height: 1.5; color: var(--ink-2)">Never your name, address or date of birth. Never marketing. Only researchers whose ethics approval you trust.</div>
+    </div>
+    <div class="bottom">
+      <a class="btn lg dark" href="home.html">Open my house</a>
+      <p class="small" style="margin: 0; text-align: center">This phone becomes the key to your house. Only it can approve requests.</p>
+    </div>
+  </main>
+</div>
+<script>
+  const presets = [...document.querySelectorAll('.preset')];
+  for (const p of presets) p.addEventListener('click', () => presets.forEach((x) => x.setAttribute('aria-checked', String(x === p))));
+</script>
+</body>
+</html>

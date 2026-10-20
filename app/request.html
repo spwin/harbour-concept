@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: a request</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="phone-page">
+<div class="phone">
+  <main class="screen tight" style="gap: 14px; padding-bottom: 28px">
+    <div class="row">
+      <a class="icon-btn" href="home.html" aria-label="Back to home"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--amber)">A request for you</div>
+    </div>
+
+    <div id="pending" class="stack" style="gap: 14px; flex: 1">
+      <section class="card stack" style="padding: 18px; gap: 12px; border-radius: 20px">
+        <div class="row"><div style="width: 44px; height: 44px; border-radius: 12px; background: #E8EDF3; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--ink-2)">CU</div><div><div style="font-weight: 800; font-size: 17px">City University</div><div class="small" style="font-size: 13px">Cardiology research group</div></div></div>
+        <p style="margin: 0; font-size: 19px; line-height: 1.35; font-weight: 700">“Do over-60s on drug X get readmitted to hospital less often?”</p>
+        <div class="row" style="flex-wrap: wrap; gap: 6px"><span class="chip">✓ Ethics approved</span><span class="chip">✓ Study certified</span><span class="chip">✓ Identity verified</span></div>
+      </section>
+      <section class="card" style="padding: 6px 18px; border-radius: 20px">
+        <div class="kv"><span>Uses</span><span>age band, medications, hospital stays</span></div>
+        <div class="kv"><span>What leaves</span><span>one scrambled yes/no answer</span></div>
+        <div class="kv"><span>They keep</span><span>nothing about you</span></div>
+        <div class="kv"><span>Pays</span><span style="color: var(--teal); font-size: 16px; font-weight: 800">£5.00</span></div>
+      </section>
+      <div style="background: #EEF0FB; border-radius: 16px; padding: 12px 14px; font-size: 14px; line-height: 1.45; color: #2E3566"><b>Why you're asked:</b> it fits your rules, but this research group is new to your house.</div>
+      <div style="margin-top: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <button type="button" class="btn lg ghost" data-answer="denied">Deny</button>
+        <button type="button" class="btn lg teal" data-answer="allowed">Allow</button>
+      </div>
+    </div>
+
+    <div id="allowed" hidden class="stack" style="flex: 1; align-items: center; justify-content: center; text-align: center; gap: 14px; padding: 0 12px">
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: var(--teal-soft); display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><path d="m9 17.5 5.5 5.5L25 11" fill="none" stroke="#0B7A69" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h1 class="title" style="font-size: 26px">You're in</h1>
+      <p class="lede">Your phone signed a key for this one study, for 48 hours. The study runs inside your house; £5 lands when it finishes.</p>
+      <a class="btn dark" href="home.html" style="margin-top: 8px; padding: 0 28px">Back to my house</a>
+      <button type="button" class="btn plain" data-answer="pending">Changed your mind? Take the key back</button>
+    </div>
+
+    <div id="denied" hidden class="stack" style="flex: 1; align-items: center; justify-content: center; text-align: center; gap: 14px; padding: 0 12px">
+      <h1 class="title" style="font-size: 26px">Declined</h1>
+      <p class="lede">City University won't get anything. Want your house to decline groups like this on its own next time?</p>
+      <a class="btn ghost" href="rules.html">Make it a rule</a>
+      <a href="home.html" style="font-size: 14px; font-weight: 600; text-decoration: none">Back to my house</a>
+    </div>
+  </main>
+</div>
+<script>
+  for (const b of document.querySelectorAll('[data-answer]')) b.addEventListener('click', () => {
+    for (const id of ['pending', 'allowed', 'denied']) document.getElementById(id).hidden = id !== b.dataset.answer;
+  });
+</script>
+</body>
+</html>
