@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: marketplace</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .app { background: var(--surface); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .app .by { font-size: 12px; color: var(--faint); }
+  .app .meta { display: flex; flex-wrap: wrap; gap: 6px; }
+  .app .meta span { font-size: 12px; font-weight: 600; background: var(--ground); border-radius: 999px; padding: 4px 9px; color: var(--ink-2); }
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; }
+  .filters button { border: 1.5px solid var(--border); background: #fff; border-radius: 999px; padding: 8px 14px; font-weight: 600; font-size: 13px; color: var(--ink-2); }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+</style>
+</head>
+<body class="console">
+<header class="topbar" data-module="market" data-org="Example Building Society"></header>
+<script src="../assets/orgbar.js"></script>
+<main class="wrap stack" style="gap: 20px">
+  <div><h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Marketplace</h1><p class="lede" style="margin-top: 6px">Modules other people built on the Lake: study templates, pricing rules, ways of working with groups. Each is a declaration an auditor certified, not code that runs on people's data, and every house checks it again before running it. No module can take a record out of a house; the houses enforce that, not the module.</p></div>
+  <div class="filters" role="group" aria-label="Show">
+    <button type="button" aria-pressed="true">All</button><button type="button" aria-pressed="false">For Offers</button><button type="button" aria-pressed="false">For Studies</button><button type="button" aria-pressed="false">New kinds of request</button>
+  </div>
+  <div class="grid">
+    <div class="app">
+      <div class="row between"><b style="font-size: 17px">Affordability rules</b><span class="badge live">Installed</span></div>
+      <div class="by">Example Actuarial · for Offers</div>
+      <div class="small" style="font-size: 14px; line-height: 1.45">Stress-tested affordability and loan-to-value tables, ready to drop into a pricing rule. Updated when the regulator's guidance changes.</div>
+      <div class="meta"><span>Certified by Example Audit Ltd</span><span>£400 a month</span></div>
+    </div>
+    <div class="app">
+      <div class="row between"><b style="font-size: 17px">Trial matching</b><button type="button" class="btn ghost" data-install style="min-height: 36px; border-radius: 10px; font-size: 13px">Install</button></div>
+      <div class="by">Example Trials Co · new kind of request</div>
+      <div class="small" style="font-size: 14px; line-height: 1.45">Each house checks, inside, whether its owner fits a trial's criteria. Only people who fit and say yes are introduced to you.</div>
+      <div class="meta"><span>Needs an ethics approval</span><span>£2 per introduction</span></div>
+    </div>
+    <div class="app">
+      <div class="row between"><b style="font-size: 17px">Paid surveys</b><button type="button" class="btn ghost" data-install style="min-height: 36px; border-radius: 10px; font-size: 13px">Install</button></div>
+      <div class="by">Example Insights · for Studies</div>
+      <div class="small" style="font-size: 14px; line-height: 1.45">Short questions people answer themselves, paid per answer, joined to coarse facts their house already holds. Answers come back grouped, never one by one.</div>
+      <div class="meta"><span>Certified by Example Audit Ltd</span><span>10% of payouts</span></div>
+    </div>
+    <div class="app">
+      <div class="row between"><b style="font-size: 17px">Loyalty without tracking</b><button type="button" class="btn ghost" data-install style="min-height: 36px; border-radius: 10px; font-size: 13px">Install</button></div>
+      <div class="by">Example Retail Labs · new kind of request</div>
+      <div class="small" style="font-size: 14px; line-height: 1.45">Rewards worked out inside each customer's house from their own receipts. You see how many earned what, not who bought what.</div>
+      <div class="meta"><span>Certified by Example Audit Ltd</span><span>Free under 1,000 people</span></div>
+    </div>
+    <div class="app">
+      <div class="row between"><b style="font-size: 17px">Group deals</b><span class="badge wait">Needs a licence</span></div>
+      <div class="by">Harbour · new kind of request</div>
+      <div class="small" style="font-size: 14px; line-height: 1.45">Answer people who pledged to buy together: one offer to a whole group, checked by each house against its own bills.</div>
+      <div class="meta"><span>Needs a supplier or insurer authorisation</span><span>Included</span></div>
+    </div>
+    <div class="app">
+      <div class="row between"><b style="font-size: 17px">Switching quotes</b><button type="button" class="btn ghost" data-install style="min-height: 36px; border-radius: 10px; font-size: 13px">Install</button></div>
+      <div class="by">Example Comparison Ltd · for Offers</div>
+      <div class="small" style="font-size: 14px; line-height: 1.45">A pricing rule for remortgages that reads a person's current deal inside their house, so your offer only shows when it actually saves them money.</div>
+      <div class="meta"><span>Certified by Example Audit Ltd</span><span>£1 per offer accepted</span></div>
+    </div>
+  </div>
+  <section class="panel" style="flex-direction: row; flex-wrap: wrap; align-items: center; gap: 16px">
+    <div style="flex: 1 1 360px"><b style="font-size: 17px">Build a module</b><div class="small" style="font-size: 14px; line-height: 1.45">Write it as a Lake declaration (a study, a pricing rule or a rulebook), get it certified, and list it here. You set the price; we take a share. It works on the open Lake without us, too.</div></div>
+    <a class="btn dark" href="https://github.com/thelakeprotocol/lake" style="border-radius: 12px">Read the protocol</a>
+  </section>
+  <p class="small" style="margin: 0">Makers, modules and prices are invented.</p>
+</main>
+<script>
+  for (const b of document.querySelectorAll('[data-install]')) b.addEventListener('click', () => { b.outerHTML = '<span class="badge live">Installed</span>'; });
+  for (const f of document.querySelectorAll('.filters button')) f.addEventListener('click', () => { for (const g of document.querySelectorAll('.filters button')) g.setAttribute('aria-pressed', String(g === f)); });
+</script>
+</body>
+</html>

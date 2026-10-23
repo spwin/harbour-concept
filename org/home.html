@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: home</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .mods { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .mod { background: var(--surface); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--ink); border: 2px solid transparent; }
+  .mod:hover { border-color: #BFE6DE; }
+  .mod.off { background: transparent; border: 2px dashed var(--border); }
+  .mod .k { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+  .cred { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .cred:first-of-type { border-top: 0; }
+</style>
+</head>
+<body class="console">
+<header class="topbar" data-module="home" data-org="Example Building Society"></header>
+<script src="../assets/orgbar.js"></script>
+<main class="wrap stack" style="gap: 24px">
+  <div><h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Example Building Society</h1><p class="lede" style="margin-top: 6px">One account on the Lake: one signed identity, one budget, one record of everything you asked people's houses. What you can do is set by the credentials you hold.</p></div>
+
+  <div class="tiles">
+    <div class="tile"><div class="k">Spent this month</div><div class="v">£6,210</div></div>
+    <div class="tile"><div class="k">Budget you signed</div><div class="v">£20,000</div></div>
+    <div class="tile"><div class="k">People who chose you</div><div class="v">28</div></div>
+    <div class="tile" style="border: 2px solid #BFE6DE"><div class="k" style="color: var(--teal-dark); font-weight: 700">Records you received unasked</div><div class="v" style="color: var(--teal)">0</div></div>
+  </div>
+
+  <h2 class="section" style="font-size: 20px">Modules</h2>
+  <div class="mods">
+    <a class="mod" href="../firms/demand.html"><div class="k">On · authorised lender</div><b style="font-size: 18px">Offers</b><span class="small" style="font-size: 14px">5 groups looking for a mortgage; your rule is in 1,816 houses; 28 accepted this month.</span></a>
+    <a class="mod" href="../console/studies.html"><div class="k">On · ethics approval held</div><b style="font-size: 18px">Studies</b><span class="small" style="font-size: 14px">Ask many houses a question; get scrambled answers back. "How many first-time buyers save £500 a month?"</span></a>
+    <a class="mod" href="marketplace.html"><div class="k">Installed · from Example Actuarial</div><b style="font-size: 18px">Affordability rules</b><span class="small" style="font-size: 14px">Certified pricing-rule templates for your Offers. Used in 2 of your rules.</span></a>
+    <a class="mod off" href="marketplace.html"><div class="k">Locked · needs an energy supply licence</div><b style="font-size: 18px">Group deals</b><span class="small" style="font-size: 14px">Answer people who pledged to buy together. You'd need a different authorisation.</span></a>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+    <section class="panel" style="flex: 1 1 420px">
+      <h2 class="section" style="font-size: 18px">Your credentials</h2>
+      <div><div class="cred"><div><b>Who you are</b><div class="small">Signed card, proven on your domain</div></div><span class="badge live">✓ Verified</span></div>
+      <div class="cred"><div><b>Mortgage lender</b><div class="small">Example Financial Regulator · unlocks Offers</div></div><span class="badge live">✓ Valid to 2027</span></div>
+      <div class="cred"><div><b>Ethics approval</b><div class="small">Example Research Ethics Board · unlocks Studies, for its questions</div></div><span class="badge live">✓ 3 questions</span></div>
+      <div class="cred"><div><b>Spending mandate</b><div class="small">Signed by your finance lead · £20,000 a month · no module can spend past it</div></div><span class="badge live">✓ Signed</span></div></div>
+    </section>
+    <section class="panel" style="flex: 1 1 420px">
+      <h2 class="section" style="font-size: 18px">Activity</h2>
+      <div class="cred"><div><b>Sam Example accepted your 4.29% offer</b><div class="small">Offers · 18:42 · files checked with their bank</div></div><a href="../firms/accepted.html" style="font-size: 13px; font-weight: 600">Confirm →</a></div>
+      <div class="cred"><div><b>Leeds group passed 400 households</b><div class="small">Offers · 16:10 · houses re-ran your rule with the group discount</div></div></div>
+      <div class="cred"><div><b>Study finished: 1,204 answers</b><div class="small">Studies · 11:30 · £4,816 paid, each with a receipt in a house</div></div></div>
+      <div class="cred"><div><b>Rule template updated</b><div class="small">Marketplace · Example Actuarial 2.1 · new certificate, not yet used</div></div></div>
+    </section>
+  </div>
+  <p class="small" style="margin: 0">Organisations, credentials and numbers are invented. The Studies screens show a hospital's account.</p>
+</main>
+</body>
+</html>

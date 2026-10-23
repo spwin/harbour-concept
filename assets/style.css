@@ -113,3 +113,10 @@ body.overview { background: var(--ground); }
 .btn.red:hover { background: #8F1C13; }
 .warn { background: var(--red-soft); border: 1.5px solid var(--red-line); border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; color: #7A1A12; font-size: 14px; line-height: 1.4; }
 .warn b { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--red); }
+
+/* The module's own pages, under the console's top bar. */
+.topbar .sub { background: var(--navy-2); }
+.topbar .sub nav { max-width: 1280px; margin: 0 auto; padding: 6px 32px; display: flex; flex-wrap: wrap; gap: 4px; }
+.topbar .sub nav a { padding: 8px 12px; border-radius: 8px; color: #A9B6C6; font-weight: 600; font-size: 13px; text-decoration: none; }
+.topbar .sub nav a[aria-current="page"] { background: var(--navy-3); color: #fff; }
+@media (max-width: 640px) { .topbar .sub nav { padding: 6px 16px; } }

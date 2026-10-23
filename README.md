@@ -1,6 +1,6 @@
 # Harbour concept (working name)
 
-A clickable concept for the commercial layer on top of the open [Lake](https://github.com/thelakeprotocol/lake) protocol. A person's house holds their records (health, money, home) and puts them to work without letting them go: offers from firms worked out inside the house, paid research, pledges with people like them, and their own AI agent keeping watch. We sell a hosted house with no setup, data connectors, real payouts, and consoles for the firms and researchers who come to people's houses.
+A clickable concept for the commercial layer on top of the open [Lake](https://github.com/thelakeprotocol/lake) protocol. A person's house holds their records (health, money, home) and puts them to work without letting them go: offers from firms worked out inside the house, paid research, pledges with people like them, and their own AI agent keeping watch. We sell a hosted house with no setup, data connectors, real payouts, and one console for the firms and researchers who come to people's houses, with a marketplace of modules others build.
 
 Plain HTML, CSS and a little JavaScript. No build step, no runtime, no dependencies.
 
@@ -12,9 +12,10 @@ open index.html            # or: python3 -m http.server 8000, then http://localh
 |---|---|
 | `index.html` | Overview of every screen; click one to use it |
 | `app/` | The app for people (phone): welcome → connect → rules → home → offers → a request → a risky request → together → money → your data |
-| `console/` | The console for researchers (desktop): studies → new study → results |
-| `firms/` | The console for firms making offers (desktop): demand → pricing rule → accepted |
-| `assets/` | Shared styles and the app's bottom navigation |
+| `org/` | The console for organisations (desktop): home (credentials, modules, activity) and the marketplace of modules |
+| `console/` | Its Studies module: studies → new study → results |
+| `firms/` | Its Offers module: demand → pricing rule → accepted |
+| `assets/` | Shared styles, the app's bottom navigation and the console's top bar |
 
 ## Open decisions marked in the screens
 
