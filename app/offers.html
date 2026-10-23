@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: offers</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .want { display: flex; align-items: center; gap: 8px; border: 1.5px dashed var(--border); border-radius: 14px; padding: 10px 12px; background: transparent; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+  .offer { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; }
+  .offer + .offer { border-top: 1px solid var(--line); }
+  .rate { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+  .group { background: var(--teal-soft); color: var(--teal-dark); border-radius: 999px; padding: 3px 9px; font-size: 12px; font-weight: 700; }
+</style>
+</head>
+<body class="phone-page">
+<div class="phone">
+  <main class="screen tight" style="gap: 14px">
+    <h1 class="page">Offers</h1>
+    <p class="lede" style="margin: -6px 0 0; font-size: 14px">Say what you're after. Authorised firms send their pricing rules; your house works each offer out on your own data. They learn who you are only if you accept.</p>
+
+    <section class="card stack pad" style="gap: 10px">
+      <div class="row between"><div><div class="small" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--teal)">Looking for</div><b style="font-size: 17px">A mortgage</b></div><span class="chip" style="font-size: 12px; padding: 5px 10px"><span class="dot" style="width: 7px; height: 7px; background: var(--teal)"></span>3 offers</span></div>
+      <div class="row" style="flex-wrap: wrap; gap: 6px"><span class="chip">First home</span><span class="chip">About £300k</span><span class="chip">Leeds area</span><span class="chip">5-year fix</span></div>
+      <div class="small">Only these coarse choices are public. Your income, savings and credit stay in your house.</div>
+    </section>
+
+    <section class="card" id="list" style="padding: 0">
+      <div class="offer">
+        <div class="row between"><b>Example Building Society</b><span class="group">Group rate · 412 houses</span></div>
+        <div class="row between" style="align-items: baseline"><span class="rate num">4.29%</span><span class="small num">£1,469 a month</span></div>
+        <div class="small">5-year fix on £270,000 over 25 years. Worked out in your house from your bank data.</div>
+        <button type="button" class="btn teal" data-accept="Example Building Society" style="border-radius: 12px">Accept</button>
+      </div>
+      <div class="offer">
+        <div class="row between"><b>Example Bank</b></div>
+        <div class="row between" style="align-items: baseline"><span class="rate num">4.45%</span><span class="small num">£1,493 a month</span></div>
+        <button type="button" class="btn ghost" data-accept="Example Bank" style="border-radius: 12px">Accept</button>
+      </div>
+      <div class="offer">
+        <div class="row between"><b>Example Home Loans</b></div>
+        <div class="row between" style="align-items: baseline"><span class="rate num">4.61%</span><span class="small num">£1,518 a month</span></div>
+        <button type="button" class="btn ghost" data-accept="Example Home Loans" style="border-radius: 12px">Accept</button>
+      </div>
+    </section>
+
+    <section id="done" hidden class="card stack pad" style="gap: 8px; border: 2px solid var(--teal)">
+      <b style="font-size: 17px">Sent to <span id="firm"></span></b>
+      <div class="small" style="font-size: 14px; line-height: 1.45">Your name and the bank statement it needs to confirm the offer, signed by your bank. Nothing went to the others; they never learned who you are.</div>
+      <a href="money.html" style="font-size: 14px; font-weight: 600; text-decoration: none">The agreement is filed in your house →</a>
+    </section>
+
+    <section class="stack" style="gap: 8px">
+      <h2 class="section">Looking for something else?</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <button type="button" class="want">＋ Home insurance</button>
+        <button type="button" class="want">＋ Energy deal</button>
+        <button type="button" class="want">＋ Car insurance</button>
+        <a class="want" href="request.html" style="text-decoration: none">＋ Studies to join</a>
+      </div>
+    </section>
+    <div class="small" style="text-align: center">Rates are illustrative. Firms are invented.</div>
+  </main>
+  <nav class="tabbar" data-current="offers"></nav>
+</div>
+<script src="../assets/tabbar.js"></script>
+<script>
+  for (const b of document.querySelectorAll('[data-accept]')) b.addEventListener('click', () => {
+    document.getElementById('firm').textContent = b.dataset.accept;
+    document.getElementById('list').hidden = true;
+    document.getElementById('done').hidden = false;
+  });
+  for (const w of document.querySelectorAll('button.want')) w.addEventListener('click', () => { w.textContent = '✓ ' + w.textContent.slice(2) + ' · looking'; w.style.borderStyle = 'solid'; w.style.color = 'var(--teal-dark)'; });
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 :root {
   --ground: #F3F5F7; --surface: #FFFFFF; --ink: #0F1B2D; --ink-2: #33445A; --muted: #4A5A6E; --faint: #5B6B7F;
   --line: #EEF1F4; --border: #CBD3DC; --teal: #0B7A69; --teal-dark: #075A4D; --teal-soft: #E3F2EF; --mint: #3FD3B4;
-  --amber: #8A5200; --amber-soft: #FCF1DC; --amber-line: #E8B65C; --navy-2: #1E2C40; --navy-3: #26364C;
+  --amber: #8A5200; --amber-soft: #FCF1DC; --amber-line: #E8B65C; --red: #B42318; --red-soft: #FDECEA; --red-line: #F0A79E; --navy-2: #1E2C40; --navy-3: #26364C;
   --font: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
@@ -58,7 +58,7 @@ h2.section { margin: 0; font-size: 17px; font-weight: 800; }
 [hidden] { display: none !important; }
 
 /* bottom navigation */
-.tabbar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--surface); border-top: 1px solid #E3E8ED; padding: 8px 8px 24px; }
+.tabbar { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); background: var(--surface); border-top: 1px solid #E3E8ED; padding: 8px 8px 24px; }
 .tabbar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 48px; color: var(--faint); font-size: 12px; font-weight: 600; text-decoration: none; }
 .tabbar a[aria-current="page"] { color: var(--ink); font-weight: 700; }
 
@@ -107,3 +107,9 @@ body.overview { background: var(--ground); }
 .shot.wide .frame iframe { width: 1440px; height: 900px; transform: scale(.3611); }
 .shot b { font-size: 15px; }
 .shot span { font-size: 13px; color: var(--faint); }
+
+/* A request worth a second look: red, and Deny is the easy button. */
+.btn.red { background: var(--red); color: #fff; border: 0; }
+.btn.red:hover { background: #8F1C13; }
+.warn { background: var(--red-soft); border: 1.5px solid var(--red-line); border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; color: #7A1A12; font-size: 14px; line-height: 1.4; }
+.warn b { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--red); }

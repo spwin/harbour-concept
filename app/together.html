@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: together</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .meter { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  .meter i { display: block; height: 100%; background: var(--teal); border-radius: 4px; }
+</style>
+</head>
+<body class="phone-page">
+<div class="phone">
+  <main class="screen tight" style="gap: 14px">
+    <div class="row">
+      <a class="icon-btn" href="home.html" aria-label="Back to home"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <h1 class="page">Together</h1>
+    </div>
+    <p class="lede" style="margin: -6px 0 0; font-size: 14px">Some things only work if enough people do them at once. Sign a pledge; it starts only when it's full, and nobody learns who signed until then.</p>
+
+    <section class="card row pad" style="gap: 12px; align-items: flex-start; border: 2px solid var(--teal-soft)">
+      <div style="width: 40px; height: 40px; border-radius: 12px; background: var(--teal-soft); display: flex; align-items: center; justify-content: center; flex: none"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="8" r="3.5" fill="none" stroke="#0B7A69" stroke-width="1.8"/><path d="M4.5 18c1-3.3 3.6-5 6.5-5s5.5 1.7 6.5 5" fill="none" stroke="#0B7A69" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <div><b>One person, one house ✓</b><div class="small" style="font-size: 13px; line-height: 1.45">A checker you trust says a real, single person owns this house, without saying who. Pledges count you once, however many houses you have.</div></div>
+    </section>
+
+    <section class="card stack pad" style="gap: 10px">
+      <div class="small" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--amber)">Data strike</div>
+      <b style="font-size: 17px">No studies under £3 an answer</b>
+      <div class="small" style="font-size: 13px; line-height: 1.45">When 5,000 people sign, every signed house turns down studies paying less than £3, until the pledge ends in 3 months.</div>
+      <div class="meter" aria-hidden="true"><i style="width: 68%"></i></div>
+      <div class="row between small num"><span>3,412 of 5,000 signed</span><span>12 days left</span></div>
+      <button type="button" class="btn dark" data-sign style="border-radius: 12px">Sign from my house</button>
+    </section>
+
+    <section class="card stack pad" style="gap: 10px">
+      <div class="small" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--teal)">Buy together</div>
+      <b style="font-size: 17px">An energy deal for 2,000 homes in Leeds</b>
+      <div class="small" style="font-size: 13px; line-height: 1.45">When 2,000 sign, the group asks authorised suppliers for one tariff. Each house checks the offer against its own bills; you still choose.</div>
+      <div class="meter" aria-hidden="true"><i style="width: 59%"></i></div>
+      <div class="row between small num"><span>1,180 of 2,000 signed</span><span>3 weeks left</span></div>
+      <button type="button" class="btn ghost" data-sign style="border-radius: 12px">Sign from my house</button>
+    </section>
+    <div class="small" style="text-align: center">Counts are illustrative.</div>
+  </main>
+  <nav class="tabbar" data-current="home"></nav>
+</div>
+<script src="../assets/tabbar.js"></script>
+<script>
+  for (const b of document.querySelectorAll('[data-sign]')) b.addEventListener('click', () => {
+    b.outerHTML = '<div style="font-size: 14px; font-weight: 700; color: var(--teal-dark)">Signed. Nobody can see it was you; if it never fills, nothing happens.</div>';
+  });
+</script>
+</body>
+</html>

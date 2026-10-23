@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour: a risky request</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="phone-page">
+<div class="phone">
+  <main class="screen tight" style="gap: 14px; padding-bottom: 28px">
+    <div class="row">
+      <a class="icon-btn" href="home.html" aria-label="Back to home"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--red)">Look twice at this one</div>
+    </div>
+
+    <div id="pending" class="stack" style="gap: 14px; flex: 1">
+      <section class="card stack" style="padding: 18px; gap: 12px; border-radius: 20px; border: 2px solid var(--red-line)">
+        <div class="row"><div style="width: 44px; height: 44px; border-radius: 12px; background: var(--red-soft); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--red)">ED</div><div><div style="font-weight: 800; font-size: 17px">Example Data Partners</div><div class="small" style="font-size: 13px">Says: "care services"</div></div></div>
+        <div class="warn">
+          <b>Your house noticed</b>
+          <span>It asks for things that identify you: your name and date of birth.</span>
+          <span>It wants to keep your data for 99 years.</span>
+          <span>Nobody has verified who it is.</span>
+        </div>
+      </section>
+      <section class="card" style="padding: 6px 18px; border-radius: 20px">
+        <div class="kv"><span>Uses</span><span>name, date of birth, postcode, medications</span></div>
+        <div class="kv"><span>What leaves</span><span>the records themselves</span></div>
+        <div class="kv"><span>They keep</span><span style="color: var(--red); font-weight: 700">yes, for 99 years</span></div>
+        <div class="kv"><span>Pays</span><span style="font-size: 16px; font-weight: 800">£0.00</span></div>
+      </section>
+      <div style="background: #EEF0FB; border-radius: 16px; padding: 12px 14px; font-size: 14px; line-height: 1.45; color: #2E3566"><b>Your house suggests: Deny.</b> None of your rules cover it, and it wants things that identify you, for decades.</div>
+      <div style="margin-top: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <button type="button" class="btn lg ghost" data-answer="confirm">Allow</button>
+        <button type="button" class="btn lg red" data-answer="denied">Deny</button>
+      </div>
+    </div>
+
+    <div id="confirm" hidden class="stack" style="flex: 1; justify-content: center; gap: 14px; padding: 0 6px">
+      <h1 class="title" style="font-size: 24px">Share your name and date of birth for 99 years, for nothing?</h1>
+      <p class="lede">Once it leaves your house, you can't take it back. Revoking the key stops new reads, not copies already made.</p>
+      <button type="button" class="btn lg red" data-answer="denied">No, deny it</button>
+      <button type="button" class="btn plain" data-answer="allowed">Yes, I know them. Allow</button>
+    </div>
+
+    <div id="allowed" hidden class="stack" style="flex: 1; align-items: center; justify-content: center; text-align: center; gap: 14px; padding: 0 12px">
+      <h1 class="title" style="font-size: 26px">Allowed</h1>
+      <p class="lede">Your phone signed a key for these four fields. You'll see it under Keys, and you can revoke it any time.</p>
+      <a class="btn dark" href="home.html" style="margin-top: 8px; padding: 0 28px">Back to my house</a>
+    </div>
+
+    <div id="denied" hidden class="stack" style="flex: 1; align-items: center; justify-content: center; text-align: center; gap: 14px; padding: 0 12px">
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: var(--teal-soft); display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><path d="m9 17.5 5.5 5.5L25 11" fill="none" stroke="#0B7A69" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h1 class="title" style="font-size: 26px">Denied</h1>
+      <p class="lede">Nothing left your house. Example Data Partners only learns that you said no, not what you hold.</p>
+      <a class="btn ghost" href="rules.html">Always deny requests like this</a>
+      <a href="home.html" style="font-size: 14px; font-weight: 600; text-decoration: none">Back to my house</a>
+    </div>
+  </main>
+</div>
+<script>
+  for (const b of document.querySelectorAll('[data-answer]')) b.addEventListener('click', () => {
+    for (const id of ['pending', 'confirm', 'allowed', 'denied']) document.getElementById(id).hidden = id !== b.dataset.answer;
+  });
+</script>
+</body>
+</html>
