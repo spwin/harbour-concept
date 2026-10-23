@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour for Firms: pricing rule</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .est { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
+  .est span:first-child { color: #C4CEDA; }
+</style>
+</head>
+<body class="console">
+<header class="topbar"><div class="in">
+  <div class="row" style="gap: 10px"><svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="8" fill="#1E2C40"/><path d="M8 15.5 15 9l7 6.5V22a1 1 0 0 1-1 1h-4v-5h-4v5H9a1 1 0 0 1-1-1z" fill="#3FD3B4"/></svg><b style="font-size: 18px">Harbour for Firms</b></div>
+  <nav aria-label="Console"><a href="demand.html">Demand</a><a href="pricing.html" aria-current="page">Pricing rule</a><a href="accepted.html">Accepted</a></nav>
+  <div class="row" style="margin-left: auto; gap: 10px; font-size: 14px; color: #C4CEDA">Example Building Society<span style="width: 32px; height: 32px; border-radius: 50%; background: var(--mint); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px">EB</span></div>
+</div></header>
+<main class="wrap" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+  <div class="stack" style="flex: 999 1 560px; min-width: 0; gap: 16px">
+    <div><h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Pricing rule</h1><p class="lede" style="margin-top: 6px">Your offer as a rule, not a form: each house runs it on its own signed records and shows the result to its owner only. It's a declaration an auditor can certify: arithmetic and tables, no code, nothing sent home.</p></div>
+    <section class="panel">
+      <h2 class="section" style="font-size: 18px">1 · What it reads, inside the house</h2>
+      <div class="row" style="flex-wrap: wrap; gap: 8px"><span class="chip">Income band</span><span class="chip">Saved each month</span><span class="chip">Savings for a deposit</span><span class="chip">Existing debts</span><span class="chip">The group's public terms</span><span class="chip">Group size</span></div>
+      <p class="small" style="font-size: 13px; margin: 0">Signed by each person's bank. Nothing here ever leaves their house unless they accept you.</p>
+    </section>
+    <section class="panel">
+      <h2 class="section" style="font-size: 18px">2 · The rate</h2>
+      <div class="table-box" style="background: var(--ground)"><table style="min-width: 0">
+        <thead><tr><th>Loan to value</th><th class="r">5-year fix</th><th class="r">2-year fix</th></tr></thead>
+        <tbody class="num"><tr><td>Up to 60%</td><td class="r">4.19%</td><td class="r">4.39%</td></tr><tr><td>60–85%</td><td class="r">4.49%</td><td class="r">4.69%</td></tr><tr><td>85–95%</td><td class="r">4.99%</td><td class="r">5.29%</td></tr></tbody>
+      </table></div>
+      <div class="list-item" style="justify-content: space-between"><div><b>Group discount</b><div class="small" style="font-size: 13px">Houses re-run your rule as their group grows; nobody is asked twice</div></div><span class="badge live">−0.10% at 100+, −0.20% at 400+</span></div>
+      <div class="list-item" style="justify-content: space-between"><div><b>Affordability</b><div class="small" style="font-size: 13px">Repayments at the rate + 3% must stay under 35% of income</div></div><span class="badge done">Eligible: yes / no</span></div>
+    </section>
+    <section class="panel">
+      <h2 class="section" style="font-size: 18px">3 · Certificate</h2>
+      <div class="list-item" style="justify-content: space-between"><div><b>Example Audit Ltd</b><div class="small" style="font-size: 13px">Declaration only · reads listed fields · output to the owner only · no loops, no I/O</div></div><span class="badge live">Certified</span></div>
+      <p class="small" style="font-size: 13px; margin: 0">Change the rule and it needs a new certificate. Houses check the certificate and the rule themselves before running it.</p>
+    </section>
+  </div>
+  <aside class="panel dark" style="flex: 1 1 320px; min-width: 0">
+    <div style="font-size: 13px; color: #A9B6C6; font-weight: 700; text-transform: uppercase; letter-spacing: .06em">Try it on a sample house</div>
+    <div class="est"><span>Income band</span><b>£50–60k</b></div>
+    <div class="est"><span>Home, deposit</span><b>£320,000, £50,000</b></div>
+    <div class="est"><span>Loan to value</span><b>84% · 4.49% − 0.20%</b></div>
+    <div class="est"><span>Group</span><b>Leeds · 412 households</b></div>
+    <div style="height: 1px; background: var(--navy-3)"></div>
+    <div class="est" style="align-items: baseline"><span>Their offer</span><b style="font-size: 28px">4.29%</b></div>
+    <div class="est"><span>Monthly, £270k over 25 years</span><b>£1,469</b></div>
+    <div class="est"><span>Eligible</span><b style="color: var(--mint)">Yes</b></div>
+    <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #A9B6C6">A made-up house, for checking your rule. Real houses never show you this: their owner sees it, you don't.</p>
+    <a class="btn mint" href="demand.html" style="border-radius: 12px; font-weight: 800">Sign and send to 5 groups</a>
+  </aside>
+</main>
+</body>
+</html>

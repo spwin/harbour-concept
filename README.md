@@ -12,7 +12,8 @@ open index.html            # or: python3 -m http.server 8000, then http://localh
 |---|---|
 | `index.html` | Overview of every screen; click one to use it |
 | `app/` | The app for people (phone): welcome → connect → rules → home → offers → a request → a risky request → together → money → your data |
-| `console/` | The console for researchers (desktop): studies → new study → results. (A console for firms sending offers is still to draw.) |
+| `console/` | The console for researchers (desktop): studies → new study → results |
+| `firms/` | The console for firms making offers (desktop): demand → pricing rule → accepted |
 | `assets/` | Shared styles and the app's bottom navigation |
 
 ## Open decisions marked in the screens

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour for Firms: accepted</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="console">
+<header class="topbar"><div class="in">
+  <div class="row" style="gap: 10px"><svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="8" fill="#1E2C40"/><path d="M8 15.5 15 9l7 6.5V22a1 1 0 0 1-1 1h-4v-5h-4v5H9a1 1 0 0 1-1-1z" fill="#3FD3B4"/></svg><b style="font-size: 18px">Harbour for Firms</b></div>
+  <nav aria-label="Console"><a href="demand.html">Demand</a><a href="pricing.html">Pricing rule</a><a href="accepted.html" aria-current="page">Accepted</a></nav>
+  <div class="row" style="margin-left: auto; gap: 10px; font-size: 14px; color: #C4CEDA">Example Building Society<span style="width: 32px; height: 32px; border-radius: 50%; background: var(--mint); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px">EB</span></div>
+</div></header>
+<main class="wrap stack" style="gap: 24px">
+  <div><h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Accepted</h1><p class="lede" style="margin-top: 6px">People who picked your offer. This is the first time you learn who they are, because they chose to tell you.</p></div>
+  <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+    <div class="table-box" style="flex: 1 1 420px">
+      <table style="min-width: 0">
+        <thead><tr><th>Person</th><th>Group</th><th class="r">Offer</th><th>Status</th></tr></thead>
+        <tbody class="num">
+          <tr style="background: var(--ground)"><td><b>Sam Example</b><div class="small">Today, 18:42</div></td><td>Leeds · first home</td><td class="r">4.29%</td><td><span class="badge wait">Check and confirm</span></td></tr>
+          <tr><td><b>Alex Sample</b><div class="small">Today, 11:05</div></td><td>Manchester · remortgage</td><td class="r">4.49%</td><td><span class="badge live">Confirmed</span></td></tr>
+          <tr><td><b>Jo Placeholder</b><div class="small">Yesterday</div></td><td>Bristol · first home</td><td class="r">4.39%</td><td><span class="badge live">Confirmed</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <section class="panel" style="flex: 1 1 420px">
+      <h2 class="section" style="font-size: 18px">Sam Example accepted your 4.29% offer</h2>
+      <div class="list-item" style="justify-content: space-between"><div><b>Bank statement, 12 months</b><div class="small" style="font-size: 13px">Signed by Sam's bank, Example Savings Bank · checked with it directly</div></div><span class="badge live">✓ Genuine</span></div>
+      <div class="list-item" style="justify-content: space-between"><div><b>Your rule, re-run on these files</b><div class="small" style="font-size: 13px">Same rule, same certificate, same result as in their house</div></div><span class="badge live">✓ 4.29%, eligible</span></div>
+      <div class="list-item" style="justify-content: space-between"><div><b>Their consent</b><div class="small" style="font-size: 13px">Signed on their phone: these two files, to you only, for this offer</div></div><span class="badge live">✓ Signed</span></div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <button type="button" class="btn teal" id="confirm" style="border-radius: 12px">Confirm conditional approval</button>
+        <button type="button" class="btn ghost" style="border-radius: 12px">Ask for one more document</button>
+      </div>
+      <div id="done" hidden style="font-size: 14px; line-height: 1.5; color: var(--teal-dark)"><b>Confirmed.</b> Sam's house filed your approval, and your £50 welcome payment, with a signed receipt.</div>
+      <p class="small" style="font-size: 13px; margin: 0">Nothing went to the other lenders in Sam's group. Each house logs what it released, to whom, and on whose say-so.</p>
+    </section>
+  </div>
+</main>
+<script>document.getElementById('confirm').addEventListener('click', (e) => { e.currentTarget.parentElement.hidden = true; document.getElementById('done').hidden = false; });</script>
+</body>
+</html>
