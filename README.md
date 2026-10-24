@@ -21,7 +21,7 @@ open index.html            # or: python3 -m http.server 8000, then http://localh
 
 - The name ("Harbour" is a placeholder).
 - Our fee: `[fee]%` on the Money screen.
-- The results page's confidence interval: `[confidence interval from the estimator]`.
+- The results page's confidence interval: `[confidence interval from the sample size]`.
 - Region: drafted for the UK (£, NHS App, GP records).
 
 Sample data, rates, counts and organisations are invented, except the Results funnel (1,000 asked, 801 countered, 737 answered, £5 group price), which comes from a real 1,000-house run of the open Lake.
